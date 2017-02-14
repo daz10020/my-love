@@ -7,7 +7,7 @@
   	<meta name="description" content="">
   	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 	<style type="text/css">
-		@font-face {
+			@font-face {
 		  font-family: 'icomoon';
 		      src:url('../fonts/icons/icomoon.eot');
 		      src:url('../fonts/icons/icomoon.eot') format('embedded-opentype'),
@@ -20,17 +20,19 @@
 		html,body {
 		  width: 100%;
 		  height: 100%;
-		  background-color: #222;
+		  overflow: hidden;
 		}
 		.content {
 		  width: 100%;
 		  height: 100%;
+		  background: url(images/bg.jpg) no-repeat center center;
 		}
 		/*stage -- start*/
 		.stage {
 		  position: relative;
 		  width: 100%;
-		  height: 680px;
+		  height: 100%;
+			/*background: rgba(255,255,255,.2);*/
 		}
 		/*stage -- end*/
 		/*img -- start*/
@@ -39,7 +41,6 @@
 		  width: 100%;
 		  height: 100%;
 		  overflow: hidden;
-		  background-color: #ddd;
 		  perspective: 800px;
 		}
 		.img-figure {
@@ -50,7 +51,7 @@
 		  padding: 25px;
 		  cursor: pointer;
 		  box-sizing: border-box;
-		  background-color: #f2f2f2;
+		  background-color: #fff;
 		  transition: all .6s ease-in-out;
 		  transform-origin: 0 50% 0;
 		  transform-style: preserve-3d;
@@ -81,7 +82,7 @@
 		  padding: 50px 40px;
 		  font-size: 20px;
 		  overflow: hidden;
-		  background-color: #eee;
+		  background-color: #fff;
 		  transform: rotateY(180deg)  translateZ(1px);
 		  backface-visibility: hidden;
 		  z-index: -1;
