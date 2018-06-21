@@ -6,144 +6,191 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   	<meta name="description" content="">
   	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/main.css">
+	<link rel="stylesheet" href="css/Quttons.css">
 	<style type="text/css">
-			@font-face {
-		  font-family: 'icomoon';
-		      src:url('../fonts/icons/icomoon.eot');
-		      src:url('../fonts/icons/icomoon.eot') format('embedded-opentype'),
-		        url('../fonts/icons/icomoon.ttf') format('truetype'),
-		        url('../fonts/icons/icomoon.woff') format('woff'),
-		        url('../fonts/icons/icomoon.svg') format('svg');
-		      font-weight: normal;
-		      font-style: normal;
+		@font-face {
+		font-family: 'icomoon';
+			src:url('../fonts/icons/icomoon.eot');
+			src:url('../fonts/icons/icomoon.eot') format('embedded-opentype'),
+				url('../fonts/icons/icomoon.ttf') format('truetype'),
+				url('../fonts/icons/icomoon.woff') format('woff'),
+				url('../fonts/icons/icomoon.svg') format('svg');
+			font-weight: normal;
+			font-style: normal;
 		}
 		html,body {
-		  width: 100%;
-		  height: 100%;
-		  overflow: hidden;
+		  	width: 100%;
+		  	height: 100%;
+		  	overflow: hidden;
 		}
-		.content {
-		  width: 100%;
-		  height: 100%;
-		  background: url(images/bg.jpg) no-repeat center center;
+		.con {
+		  	width: 100%;
+			height: 100%;
+		  	background: url(images/bg.jpg) no-repeat center center;
 		}
 		/*stage -- start*/
 		.stage {
-		  position: relative;
-		  width: 100%;
-		  height: 100%;
+		  	position: relative;
+		  	width: 100%;
+		  	height: 100%;
 			/*background: rgba(255,255,255,.2);*/
 		}
 		/*stage -- end*/
 		/*img -- start*/
 		.img-sec {
-		  position: relative;
-		  width: 100%;
-		  height: 100%;
-		  overflow: hidden;
-		  perspective: 800px;
+		  	position: relative;
+		  	width: 100%;
+		  	height: 100%;
+		  	overflow: hidden;
+		  	perspective: 800px;
 		}
 		.img-figure {
-		  position: absolute;
-		  width: 290px;
-		  height: 410px;
-		  margin: 0;
-		  padding: 25px;
-		  cursor: pointer;
-		  box-sizing: border-box;
-		  background-color: #fff;
-		  transition: all .6s ease-in-out;
-		  transform-origin: 0 50% 0;
-		  transform-style: preserve-3d;
+			position: absolute;
+			width: 290px;
+			height: 410px;
+			margin: 0;
+			padding: 25px;
+			cursor: pointer;
+			box-sizing: border-box;
+			background-color: #fff;
+			transition: all .6s ease-in-out;
+			transform-origin: 0 50% 0;
+			transform-style: preserve-3d;
 		}
-		.img-figure img {
-		  width: 240px;
-		  height: 320px;
-		  display: block;
+		[is-center='1'] {
+			z-index: 10;
+		}
+		.img-figure .img {
+			width: 240px;
+			height: 320px;
+			display: block;
+			background-repeat: no-repeat; 
+			background-size: 100%;
 		}
 		.img-figure.is-inverse {
-		  transform: rotateY(180deg) translate(-280px);
+		  	transform: rotateY(180deg) translate(-280px);
 		}
 		figcaption {
-		  text-align: center;
+		  	text-align: center;
 		}
 		.img-title {
-		  margin: 20px 0 0 0;
-		  color: #a7a0a2;
-		  font-size: 20px;
+		  	margin: 20px 0 0 0;
+		  	color: #a7a0a2;
+		  	font-size: 20px;
 		}
 		.img_back {
-		  position: absolute;
-		  left: 0;
-		  top: 0;
-		  width: 100%;
-		  height: 100%;
-		  box-sizing: border-box;
-		  padding: 50px 40px;
-		  font-size: 20px;
-		  overflow: hidden;
-		  background-color: #fff;
-		  transform: rotateY(180deg)  translateZ(1px);
-		  backface-visibility: hidden;
-		  z-index: -1;
+		  	position: absolute;
+		  	left: 0;
+		  	top: 0;
+		  	width: 100%;
+		  	height: 100%;
+		  	line-height: 1.75em;
+		  	box-sizing: border-box;
+		  	padding: 50px 40px;
+		  	font-size: 20px;
+		 	overflow: hidden;
+		  	background-color: #fff;
+		  	transform: rotateY(180deg)  translateZ(1px);
+		  	backface-visibility: hidden;
+		  	z-index: -1;
 		}
 		/*img -- end*/
 
 		/*ctrl -- start*/
 		.controller-nav {
-		  position: relative;
-		  left: 0;
-		  bottom: 30px;
-		  z-index: 101;
-		  width: 100%;
-		  text-align: center;
+		  	position: relative;
+		  	left: 0;
+		  	bottom: 30px;
+		  	z-index: 101;
+		  	width: 100%;
+		  	text-align: center;
 		}
 		.controller-unit {
-		  display: inline-block;
-		  width: 30px;
-		  height: 30px;
-		  margin: 0 5px;
-		  text-align: center;
-		  cursor: pointer;
-		  background-color: #aaa;
-		  border-radius: 50%;
-		  transform: scale(.5);
-		  transition: transform .6s ease-in-out, background-color .3s;
-		  vertical-align: middle;
+		  	display: inline-block;
+		  	width: 30px;
+		  	height: 30px;
+		  	margin: 0 5px;
+		  	text-align: center;
+		  	cursor: pointer;
+		  	background-color: #aaa;
+		  	border-radius: 50%;
+		  	transform: scale(.5);
+		  	transition: transform .6s ease-in-out, background-color .3s;
+		  	vertical-align: middle;
 		}
 		.controller-unit.is-center {
-		  transform: scale(1);
-		  background-color: #888;    
+		  	transform: scale(1);
+		  	background-color: #888;
 		}
 		.controller-unit.is-center::after {
-		  font-family: "icomoon";
-		  content: "\e667";
-		  color: #fff;
-		  line-height: 30px;
-		  font-size: 14px;
-		  -webkit-font-smoothing: antialiased;
-		  -moz-osx-font-smoothing: grayscale;
+		  	font-family: "icomoon";
+		  	content: "\e667";
+		  	color: #fff;
+		  	line-height: 30px;
+		  	font-size: 14px;
+		  	-webkit-font-smoothing: antialiased;
+		  	-moz-osx-font-smoothing: grayscale;
 		}
 		.controller-unit.is-center.is-inverse {
-		  background-color: #555;
-		  transform: rotateY(180deg);
-		  perspective: 800;
+		  	background-color: #555;
+		  	transform: rotateY(180deg);
+		  	perspective: 800;
 		}
 		/*ctrl -- end*/
 	</style>
 </head>
 <body>
-	<div class="content">
+	<div class="con">
 		<section class="stage">
 			<section id="imgSec" class="img-sec">
 				
 			</section>
 		</section>
-		<audio src="http://sound.kagirl.net/sound/qq_813241.mp3" autoplay loop>这浏览器太古老了，不支持音乐播放</audio>
+		<audio id="audio" src="images/miao.mp3" autoplay controls loop>
+			这浏览器太古老了，不支持音乐播放
+		</audio>
 	</div>
+	<div class="shutter">
+	    <div></div>
+	    <div></div>
+	    <div></div>
+	</div>
+	<div class="qutton" id = "qutton_delete">
+		<div class = "qutton_dialog" id="deleteDialog">
+			<h2>Are you Sure ?</h2>
+			<div id="button_basic_confirm_delete">Yes, I do</div>
+		</div>
+	</div>
+	  
 </body>
+<script type = "text/javascript" src = "js/lib/jquery-1.11.2.min.js"></script>
+<script src="js/lib/velocity.js"></script>
+<script src = "js/lib/velocity.ui.js" type = "text/javascript"></script>
+<script src="js/lib/Quttons.js" type = "text/javascript"></script>
+<script type = "text/javascript" src = "js/main.js"></script>
 <script type="text/javascript">
 	var imgSec = document.getElementById('imgSec');
+	var audio = document.getElementById('audio');
+	var shutter = document.querySelector('.shutter');
+	var $shutter = $('.shutter');
+	var dialog = $('#qutton_delete');
+	var dialog1 = $('#deleteDialog');
+	var btn = document.getElementById('button_basic_confirm_delete');
+	var timer,figures,idx = 15;
+
+	btn.onclick = () => {
+		shutter.classList.toggle('open');
+		setTimeout(function (argument) {
+			$shutter.hide();
+		},1000);
+		audio.paused && audio.play();
+		dialog.hide();
+		dialog1.hide();
+		init();
+	};
+
 	var clientW = document.documentElement.clientWidth;//视口宽度
 	var ll = -140;
 	var lr = clientW / 2 - 450;
@@ -151,26 +198,27 @@
 	var rr = clientW - 140;
 	var t = 540;
 	var imgNs = [];
-	for(var i = 0;i<19;i++){
+	for(var i = 0;i<16;i++){
 		imgNs[i] = i;
 	}
-	var tits = ['我愿落笔生花，<br>守护你，<br>直到白骨黄沙',
-				'倾心相遇，安暖相陪',
-				'世间再多的情话，<br>也抵不过一句：<br>有你，这样，就够了',
-				'宁为你一人<br>冥顽痴傻，<br>纵使辜负<br>全世界的烟霞',
-				'在所有人都说我很坚强时，<br>只有你会对我说：<br>别逞强',
-				'青丝缠雪吟别<br>一场暮色残年，<br>流年逝水不负<br>一世韶华情缘',
-				'其实摩天轮下，<br>放飞的孔明灯上，<br>写的话我并没有忘记：<br>清晨醒来，阳光还在，你还在，<br>这就是我想要的生活',
-				'独坐黄昏谁是伴，<br>紫薇花对紫薇郎',
-				'现在所有的努力，<br>是为了给你<br>一个更好的未来，<br>虽然<br>你要的很简单',
-				'琴瑟在御，莫不静好',
-				'被爱<br>是一种奢侈的幸福，<br>但你依然是<br>我最大的心事',
-				'因为是你，<br>因为是我',
-				'我的爱不多，<br>只有一份，<br>一旦付出了，<br>就是全部了',
-				'相遇，<br>便执子之手，<br>未来有你足矣',
-				'相守，<br>定与子偕老，<br>回忆只许有你',
-				'不怕念起，<br>唯恐觉迟，<br>既已执手，<br>此生不负'
-				];
+	var tits = [
+	    '我愿落笔生花，<br>守护你，<br>直到白骨黄沙。',
+		'倾心相遇，安暖相陪',
+		'世间再多的情话，<br>也抵不过一句：<br>有你，这样，就够了。',
+		'宁为你一人<br>冥顽痴傻，<br>纵使辜负<br>全世界的烟霞。',
+		'在所有人都说我很坚强时，<br>只有你会对我说：<br>别逞强。',
+		'青丝缠雪吟别<br>一场暮色残年<br>流年逝水不负<br>一世韶华情缘',
+		'其实摩天轮下，<br>放飞的孔明灯上，<br>写的话我并没有忘记：<br>清晨醒来，阳光还在，你还在，<br>这就是我想要的生活。',
+		'独坐黄昏谁是伴，<br>紫薇花对紫薇郎。',
+		'现在所有的努力，<br>是为了给你<br>一个更好的未来，<br>虽然<br>你要的很简单。',
+		'琴瑟在御，莫不静好',
+		'被爱<br>是一种奢侈的幸福，<br>但你依然是<br>我最大的心事。',
+		'因为是你，<br>因为是我',
+		'我的爱不多，<br>只有一份，<br>一旦付出了，<br>就是全部了。',
+		'相遇，<br>便执子之手，<br>未来有你足矣。',
+		'相守，<br>定与子偕老，<br>回忆只许有你。',
+		'不怕念起，<br>唯恐觉迟，<br>既已执手，<br>此生不负。'
+	];
 	// 位置随机
 	function getRangeRandom(low,high) {
 		return Math.ceil(Math.random() * (high - low) + low);
@@ -181,27 +229,32 @@
 	function get30DegRandom() {
 		return ( (Math.random() > 0.5 ? '' : '-') + Math.ceil(Math.random() * 30));
 	}
-	init();
 	function init() {
-		
 		creatF();
 		setTop();
 		czwz();
-
+		timeFun();
+	}
+	function timeFun () {
+		clearInterval(timer);
+		timer = setInterval(function() {
+			figures[--idx < 0 ? 15 : idx].click();
+		},3000);
 	}
 	function creatF(){
 		var inHtml = ''
-		for (var i = imgNs.length - 1; i >= 0; i--) {
+		for (var i = 0; i < imgNs.length; i++) {
 			var imgs = '';
 			if(!tits[i])
 				tits[i] = tits[getRangeRandom(3,tits.length - 1)];
-			imgs = '<img src="images/' + imgNs[i] + '.jpg" alt="I Love U"><figcaption><h2 class="img-title">I Love U</h2><div class="img_back"><p>' + tits[i] + '</p></div></figcaption>';
-			inHtml += '<figure class="img-figure" is-center="0" is-inverse="0" is-top="0">' + imgs + '</figure>';
+			imgs = '<div class="img" style="background-image:url(images/' + imgNs[i] + '.jpg)" alt="I Love U"></div><figcaption><h2 class="img-title">I Love U</h2><div class="img_back"><p>' + tits[i] + '</p></div></figcaption>';
+			inHtml += '<figure class="img-figure" idx=' + i + ' is-center="0" is-inverse="0" is-top="0">' + imgs + '</figure>';
 		};
 		imgSec.innerHTML = inHtml;
-		var figures = imgSec.getElementsByTagName('figure');
+		figures = imgSec.getElementsByTagName('figure');
 		for (var i = figures.length - 1; i >= 0; i--) {
 			figures[i].onclick = function(){
+				idx = Number(this.getAttribute('idx'));
 				if(this.getAttribute('is-center') == 1){
 					if(this.getAttribute('is-inverse') == 0){
 						this.setAttribute('is-inverse',1);
@@ -217,7 +270,13 @@
 					this.setAttribute('is-center',1);
 					czwz();
 				}
-			}
+			};
+			figures[i].onmouseleave = function(event) {
+				timeFun();
+			};
+			figures[i].onmouseenter = function(event) {
+				clearInterval(timer);
+			};
 		};
 		figures[1].click();
 	}
