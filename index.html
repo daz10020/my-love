@@ -255,27 +255,43 @@
 		for (var i = figures.length - 1; i >= 0; i--) {
 			figures[i].onclick = function(){
 				idx = Number(this.getAttribute('idx'));
-				if(this.getAttribute('is-center') == 1){
-					if(this.getAttribute('is-inverse') == 0){
-						this.setAttribute('is-inverse',1);
-						this.className = 'img-figure is-inverse';
-					}else{
-						this.setAttribute('is-inverse',0);
-						this.className = 'img-figure';
-					}
-				}else{
-					for (var i = figures.length - 1; i >= 0; i--) {
-						figures[i].setAttribute('is-center',0);
+				// if(this.getAttribute('is-center') == 1){
+				// 	if(this.getAttribute('is-inverse') == 0){
+				// 		this.setAttribute('is-inverse',1);
+				// 		this.className = 'img-figure is-inverse';
+				// 	}else{
+				// 		this.setAttribute('is-inverse',0);
+				// 		this.className = 'img-figure';
+				// 	}
+				// }else{
+					timeFun ();
+					for (var j = 0; j < figures.length; j++) {
+						figures[j].setAttribute('is-center',0);
 					};
 					this.setAttribute('is-center',1);
 					czwz();
-				}
+				// }
 			};
 			figures[i].onmouseleave = function(event) {
+				if (this.getAttribute('is-center') == 0) {
+					return;
+				}
 				timeFun();
+				if(this.getAttribute('is-inverse') == 1) {
+					this.className = 'img-figure';
+					this.setAttribute('is-inverse',0);
+				}
 			};
 			figures[i].onmouseenter = function(event) {
+				if (this.getAttribute('is-center') == 0) {
+					return;
+				}
 				clearInterval(timer);
+				var that = this;
+				this.className = 'img-figure is-inverse';
+				setTimeout(function () {
+					that.setAttribute('is-inverse',1);
+				},600)
 			};
 		};
 		figures[1].click();
